@@ -16,21 +16,10 @@ const range = sheet['!ref'];
 
 // セルの範囲を数値化
 const rangeN = utils.decode_range(range);
-// console.log(rangeN);
 
-// // セルの値の取得 1 : セル名で取得
-// const cell01 = sheet['A1'];
-// console.log(cell01);
-
-// // セルの値取得 2 : utilsを使用してアドレス指定
-// const address02 = utils.encode_cell({r:0, c:0});
-// const cell02 = sheet[address02];
-// console.log(cell02);
-
-
-// A列取得
-// for (let c = rangeN.s.c; c <= rangeN.e.c; c++) {
+// ループ処理
 for (let r = rangeN.s.r; r <= rangeN.e.r; r++) {
+    // ファイル名取得
     let address = utils.encode_cell({c:0, r:r});
     let cell = sheet[address];
 
@@ -53,7 +42,7 @@ for (let r = rangeN.s.r; r <= rangeN.e.r; r++) {
 
         // 置換
         const beforeTxt = data;
-        const afterTxt = beforeTxt.replace('<title>' + B_cell.v + '</title>', '<title>' + A_cell.v + '</title>');
+        const afterTxt = beforeTxt.replace(new RegExp(B_cell.v,"g"), A_cell.v);
         
         // ファイルの上書き
         fs.writeFile('./test/' + cell.v, afterTxt, (err) => {
