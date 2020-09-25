@@ -1,6 +1,6 @@
 # excel-replaceer
 
-ExcelのデータをもとにHTMLファイルを置換するモジュール
+Excelのデータをもとに置換するモジュール
 
 ## how to use
 ```bash=
