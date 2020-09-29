@@ -38,7 +38,7 @@ for (let r = rangeN.s.r; r <= rangeN.e.r; r++) {
   // 置換ファイルがない場合
   catch (err) {
     try {
-      console.log(`【 ${cell.v} 】file not found (+_+) !`);
+      console.log(`【 ${cell.v} 】file not found (+_+)`);
       fs.appendFileSync("./log/replace-log.txt", `【 ${cell.v} 】file not found\n`, "utf8");
     } catch (err) {
       throw err;
@@ -67,7 +67,7 @@ for (let r = rangeN.s.r; r <= rangeN.e.r; r++) {
     try {
       fs.writeFileSync("./test/" + cell.v, afterTxt, "utf8");
       try {
-        console.log(`【 ${cell.v} 】done (/・ω・)/ !`);
+        console.log(`【 ${cell.v} 】done (/・ω・)/`);
         fs.appendFileSync("./log/replace-log.txt", `【 ${cell.v} 】done\n`, "utf8");
       } catch (err) {
         throw err;
@@ -77,7 +77,7 @@ for (let r = rangeN.s.r; r <= rangeN.e.r; r++) {
     // ファイルの上書きに失敗した場合
     catch (err) {
       try {
-        console.log(`【 ${cell.v} 】file write err (+_+) !`);
+        console.log(`【 ${cell.v} 】file write err (+_+)`);
         fs.appendFileSync("./log/replace-log.txt", `【 ${cell.v} 】file write err\n`, "utf8");
       } catch (err) {
         throw err;
@@ -88,7 +88,7 @@ for (let r = rangeN.s.r; r <= rangeN.e.r; r++) {
   // 置換が行われなかった場合
   else {;
     try {
-      console.log(`【 ${cell.v} 】no replace (>_<) !`);
+      console.log(`【 ${cell.v} 】no replace (>_<)`);
       fs.appendFileSync("./log/replace-log.txt", `【 ${cell.v} 】no replace\n`, "utf8");
     } catch (err) {
       throw err;
