@@ -15,10 +15,10 @@ const range = sheet["!ref"];
 // セルの範囲を数値化
 const rangeN = utils.decode_range(range);
 
-// logスタート
+// log start
 try {
   const start_date = new Date();
-  const log_start = `\n----- Start : ${start_date.getFullYear()}/${start_date.getMonth()}/${start_date.getDate()} ${start_date.getHours()}:${start_date.getMinutes()}:${start_date.getSeconds()}:${start_date.getMilliseconds()} -----\n`;
+  const log_start = `----- Start : ${start_date.getFullYear()}/${start_date.getMonth()}/${start_date.getDate()} ${start_date.getHours()}:${start_date.getMinutes()}:${start_date.getSeconds()}:${start_date.getMilliseconds()} -----\n`;
   fs.appendFileSync("./log/replace-log.txt", log_start, "utf8");
 } catch (err) {
   throw err;
@@ -94,4 +94,13 @@ for (let r = rangeN.s.r; r <= rangeN.e.r; r++) {
       throw err;
     }
   }
+}
+
+// log end
+try {
+  const end_date = new Date();
+  const log_end = `----- End : ${end_date.getFullYear()}/${end_date.getMonth()}/${end_date.getDate()} ${end_date.getHours()}:${end_date.getMinutes()}:${end_date.getSeconds()}:${end_date.getMilliseconds()} -----\n\n`;
+  fs.appendFileSync("./log/replace-log.txt", log_end, "utf8");
+} catch (err) {
+  throw err;
 }
