@@ -77,7 +77,7 @@ for (let r = rangeN.s.r; r <= rangeN.e.r; r++) {
     // ファイルの上書きに失敗した場合
     catch (err) {
       try {
-        console.log(`【 ${cell.v} 】file write err (+_+)`);
+        console.log(`【 ${cell.v} 】file write err (゜-゜)!?`);
         fs.appendFileSync("./log/replace-log.txt", `【 ${cell.v} 】file write err\n`, "utf8");
       } catch (err) {
         throw err;
